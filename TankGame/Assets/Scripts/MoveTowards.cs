@@ -36,7 +36,7 @@ public class MoveTowards : MonoBehaviour
 //
 //
 
-		this.transform.Translate(Vector3.forward * speed * Time.deltaTime * 0.02f);
+		//this.transform.Translate(Vector3.forward * speed * Time.deltaTime * 0.02f);
 
 
 	}

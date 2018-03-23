@@ -6,18 +6,26 @@ public class TankMovement : MonoBehaviour
 {
 	public float speed = 10.0f, rotSpeed = 90.0f;
 	private Text gpsText;
-
+	private float velocity;
 	void Start()
 	{
 		GameObject textObject = GameObject.FindGameObjectWithTag("GPSText");
+		Rigidbody myRb = this.GetComponent<Rigidbody>();
+
 		if (textObject != null) {
 			gpsText = textObject.GetComponent<Text>();
 		}
+			
+
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+		Rigidbody myRb = this.GetComponent<Rigidbody>();
+
+		velocity = myRb.velocity.x;
+
 		if (Input.GetKey (KeyCode.W)) {
 			this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
 		}

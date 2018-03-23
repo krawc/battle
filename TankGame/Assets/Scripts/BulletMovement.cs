@@ -5,19 +5,19 @@ public class BulletMovement : MonoBehaviour
 {
 	public float speed = 20;
 
-	void Start()
-	{
-		Invoke ("DestroyBullet", 1);
-	}
-
-	// Update is called once per frame
+//	void Start()
+//	{
+//		Invoke ("DestroyBullet", 1);
+//	}
+//
+//	// Update is called once per frame
 	void Update ()
 	{
-		this.transform.Translate (Vector3.forward * speed * Time.deltaTime);
+		this.transform.Translate (Vector3.left * speed * Time.deltaTime);
 	}
 	
-	void DestroyBullet()
-	{
-		Destroy (this.gameObject);
-	}
+//	void DestroyBullet()
+//	{
+//		Destroy (this.gameObject);
+//	}
 }
