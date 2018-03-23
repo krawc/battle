@@ -87,29 +87,32 @@ public class BulletHit : MonoBehaviour
 			if (playerHealth != null) {
 				truth = playerHealth.truth;
 			}
-
-			if (aff1 == 1) {
-				modalPanel.Choice (dem[Random.Range (0, 6)]);
-				playerHealth.DecreaseTruth(Random.Range(-10, 30));
-				if (aff1 != playerAff1) {
-					playerHealth.DecreaseHealth (20);
+			if (truth > 0) {
+				if (aff1 == 1) {
+					modalPanel.Choice (dem [Random.Range (0, 6)]);
+					playerHealth.DecreaseTruth (Random.Range (-10, 30));
+					if (aff1 != playerAff1) {
+						playerHealth.DecreaseHealth (20);
+					}
+				} else if (aff2 == 1) {
+					modalPanel.Choice (rep [Random.Range (0, 5)]);
+					playerHealth.DecreaseTruth (Random.Range (-10, 30));
+					if (aff2 != playerAff2) {
+						playerHealth.DecreaseHealth (20);
+					}
+				} else if (gameObject.tag == "Bullet") {
+					modalPanel.Choice (que [queCount]);
+					playerHealth.DecreaseTruth (Random.Range (-50, 0));
+					playerAffiliation.incQueCount ();
 				}
-			} else if (aff2 == 1){
-				modalPanel.Choice (rep[Random.Range (0, 5)]);
-				playerHealth.DecreaseTruth(Random.Range(-10, 30));
-				if (aff2 != playerAff2) {
-					playerHealth.DecreaseHealth (20);
-				}
-			} else if (gameObject.tag == "Bullet") {
-				modalPanel.Choice (que[queCount]);
-				playerHealth.DecreaseTruth(Random.Range(-50, 0));
-				playerAffiliation.incQueCount();
-			}
-			if (playerAffiliation != null) {
-				playerAffiliation.functionCalled = false;
+				if (playerAffiliation != null) {
+					playerAffiliation.functionCalled = false;
 
+				}
+				updated = true;
+			} else {
+				modalPanel.Choice ("You don't seem to get to the truth. What if you abandon the group and ask questions?")
 			}
-			updated = true;
 //			if (playerHealth != null) {
 //
 //

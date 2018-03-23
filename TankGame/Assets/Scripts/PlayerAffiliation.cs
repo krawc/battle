@@ -109,8 +109,8 @@ public class PlayerAffiliation : MonoBehaviour
 					functionCalled = true;
 				}
 			} else {
-				if (!functionCalled) {
 					playerHealth.DecreaseHealth (0.2f);
+				if (functionCalled) {
 					Invoke ("urNot", 1f);
 					functionCalled = true;
 				}
@@ -118,8 +118,9 @@ public class PlayerAffiliation : MonoBehaviour
 
 				
 		} else {
-			if (!functionCalled) {
+
 				playerHealth.DecreaseHealth (0.2f);
+			if (functionCalled) {
 				Invoke ("urNot", 1f);
 				functionCalled = true;
 			}
@@ -142,7 +143,7 @@ public class PlayerAffiliation : MonoBehaviour
 	}
 
 	IEnumerator ChangeAffiliation() {
-		yield return new WaitForSeconds(15);
+		yield return new WaitForSeconds(10);
 
 		if (avg > 0) {
 			affiliation1 = 1;
@@ -154,7 +155,8 @@ public class PlayerAffiliation : MonoBehaviour
 	}
 
 	void urSafe() {
-		modalPanel.Choice ("You are safe. Connect with your friends and the world around.");
+		modalPanel.Choice ("You are safe. Connect with your friends and the world around. Mind the truth count.");
+		functionCalled = true;
 	}
 
 	void urNot() {

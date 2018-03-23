@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\ModalPanel.cs" />
      <Compile Include="Assets\Scripts\ModifyHealthAttribute.cs" />
      <Compile Include="Assets\Scripts\MoveTowards.cs" />
+     <Compile Include="Assets\Scripts\NoTruth.cs" />
      <Compile Include="Assets\Scripts\PlayerAffiliation.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\TankMovement.cs" />
